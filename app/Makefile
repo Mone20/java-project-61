@@ -1,3 +1,3 @@
 # Makefile
-run-dist: # создать .env-файл для секретов
+run-dist:
 	./build/install/app/bin/app
