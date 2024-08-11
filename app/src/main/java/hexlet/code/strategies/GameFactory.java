@@ -15,13 +15,17 @@ public class GameFactory {
     private final Map<Integer, Game> availableGames = new LinkedHashMap<>();
 
     public GameFactory() {
-        availableGames.put(1, new Greet());
-        availableGames.put(2, new Even());
-        availableGames.put(3, new Calculator());
-        availableGames.put(4, new GCD());
-        availableGames.put(5, new Progression());
-        availableGames.put(6, new Prime());
-        availableGames.put(0, new Exit());
+        addGameInList(new Greet());
+        addGameInList(new Even());
+        addGameInList(new Calculator());
+        addGameInList(new GCD());
+        addGameInList(new Progression());
+        addGameInList(new Prime());
+        addGameInList(new Exit());
+    }
+
+    private void addGameInList(Game game) {
+        availableGames.put(game.getOrder(), game);
     }
 
     public Game getGameByNumber(int number) {

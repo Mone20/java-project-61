@@ -3,7 +3,7 @@ package hexlet.code.strategies.impl;
 import hexlet.code.model.Question;
 import hexlet.code.strategies.AbstractGame;
 
-public class Prime extends AbstractGame {
+public final class Prime extends AbstractGame {
 
     @Override
     public String getName() {
@@ -16,8 +16,13 @@ public class Prime extends AbstractGame {
     }
 
     @Override
+    public int getOrder() {
+        return 6;
+    }
+
+    @Override
     protected Question generateQuestion() {
-        int question = random.nextInt(100);
+        int question = getRandom().nextInt(numberBound);
         return new Question(Integer.toString(question), isPrime(question) ? "yes" : "no");
     }
 

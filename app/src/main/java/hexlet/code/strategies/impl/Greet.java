@@ -5,7 +5,7 @@ import hexlet.code.model.Question;
 import hexlet.code.strategies.Game;
 
 
-public class Greet implements Game {
+public final class Greet implements Game {
     @Override
     public boolean start() {
         Cli.greetUser();
@@ -31,5 +31,10 @@ public class Greet implements Game {
     @Override
     public boolean isStub() {
         return true;
+    }
+
+    @Override
+    public int getOrder() {
+        return 1;
     }
 }

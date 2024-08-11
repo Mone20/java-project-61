@@ -2,27 +2,27 @@ package hexlet.code.model;
 
 public class Question {
 
-    private String question;
+    private String questionText;
     private String answer;
 
-    public Question(String question, String answer) {
-        this.question = question;
+    public Question(String questionText, String answer) {
+        this.questionText = questionText;
         this.answer = answer;
     }
 
-    public String getQuestion() {
-        return question;
+    public final String getQuestionText() {
+        return questionText;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public final void setQuestionText(String questionText) {
+        this.questionText = questionText;
     }
 
-    public String getAnswer() {
+    public final String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public final void setAnswer(String answer) {
         this.answer = answer;
     }
 }

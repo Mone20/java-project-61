@@ -3,7 +3,8 @@ package hexlet.code.strategies.impl;
 import hexlet.code.model.Question;
 import hexlet.code.strategies.AbstractGame;
 
-public class Even extends AbstractGame {
+public final class Even extends AbstractGame {
+
     @Override
     public String getName() {
         return "Even";
@@ -15,8 +16,13 @@ public class Even extends AbstractGame {
     }
 
     @Override
+    public int getOrder() {
+        return 2;
+    }
+
+    @Override
     protected Question generateQuestion() {
-        int question = random.nextInt(100);
+        int question = getRandom().nextInt(numberBound);
         return new Question(Integer.toString(question), (question % 2 == 0) ? "yes" : "no");
     }
 }

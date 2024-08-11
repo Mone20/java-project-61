@@ -3,8 +3,9 @@ package hexlet.code.strategies.impl;
 import hexlet.code.model.Question;
 import hexlet.code.strategies.AbstractGame;
 
-public class GCD extends AbstractGame {
+import java.util.Random;
 
+public final class GCD extends AbstractGame {
     @Override
     public String getName() {
         return "GCD";
@@ -16,9 +17,15 @@ public class GCD extends AbstractGame {
     }
 
     @Override
+    public int getOrder() {
+        return 4;
+    }
+
+    @Override
     protected Question generateQuestion() {
-        int num1 = random.nextInt(100);
-        int num2 = random.nextInt(100);
+        Random random = getRandom();
+        int num1 = random.nextInt(numberBound);
+        int num2 = random.nextInt(numberBound);
         return new Question(num1 + " " + num2, Integer.toString(findGCD(num1, num2)));
     }
 

@@ -3,7 +3,7 @@ package hexlet.code.strategies.impl;
 import hexlet.code.model.Question;
 import hexlet.code.strategies.Game;
 
-public class Exit implements Game {
+public final class Exit implements Game {
     @Override
     public boolean start() {
         System.exit(0);
@@ -28,5 +28,10 @@ public class Exit implements Game {
     @Override
     public boolean isStub() {
         return true;
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
     }
 }

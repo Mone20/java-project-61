@@ -3,8 +3,10 @@ package hexlet.code.strategies.impl;
 import hexlet.code.model.Question;
 import hexlet.code.strategies.AbstractGame;
 
+import java.util.Random;
 
-public class Calculator extends AbstractGame {
+
+public final class Calculator extends AbstractGame {
 
     private final char[] operators = {'+', '-', '*'};
 
@@ -19,9 +21,15 @@ public class Calculator extends AbstractGame {
     }
 
     @Override
+    public int getOrder() {
+        return 3;
+    }
+
+    @Override
     protected Question generateQuestion() {
-        int num1 = random.nextInt(100);
-        int num2 = random.nextInt(100);
+        Random random = getRandom();
+        int num1 = random.nextInt(numberBound);
+        int num2 = random.nextInt(numberBound);
         char operator = getRandomOperator();
         return new Question(num1 + " " + operator + " " + num2,
                 Integer.toString(calculateAnswer(num1, num2, operator)));
@@ -29,7 +37,7 @@ public class Calculator extends AbstractGame {
     }
 
     private char getRandomOperator() {
-        return operators[random.nextInt(operators.length)];
+        return operators[getRandom().nextInt(operators.length)];
     }
 
     private int calculateAnswer(int num1, int num2, char operator) {

@@ -8,13 +8,18 @@ import java.util.Scanner;
 public abstract class AbstractGame implements Game {
 
     private final int maxQuestionNumber = 3;
-    protected final Random random = new Random();
+    protected final int numberBound = 100;
+    private final Random random = new Random();
+
+    protected Random getRandom() {
+        return random;
+    }
     @Override
     public boolean start() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(getDescription());
         for (Question question : getQuestions()) {
-            System.out.println("Question: " + question.getQuestion());
+            System.out.println("Question: " + question.getQuestionText());
             String answer = scanner.nextLine();
             try {
                 System.out.println("Your answer: " + answer);

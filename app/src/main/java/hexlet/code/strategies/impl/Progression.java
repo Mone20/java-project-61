@@ -3,10 +3,16 @@ package hexlet.code.strategies.impl;
 import hexlet.code.model.Question;
 import hexlet.code.strategies.AbstractGame;
 
-public class Progression extends AbstractGame {
+import java.util.Random;
+
+public final class Progression extends AbstractGame {
 
     private final int maxLength = 10;
     private final int minLength = 5;
+
+    private final int startBound = 20;
+
+    private final int stepBound = 10;
 
     @Override
     public String getName() {
@@ -19,10 +25,16 @@ public class Progression extends AbstractGame {
     }
 
     @Override
+    public int getOrder() {
+        return 5;
+    }
+
+    @Override
     protected Question generateQuestion() {
+        Random random = getRandom();
         int length = random.nextInt(maxLength - minLength) + minLength;
-        int start = random.nextInt(20);
-        int step = random.nextInt(10) + 1;
+        int start = random.nextInt(startBound);
+        int step = random.nextInt(stepBound) + 1;
 
         String[] progression = new String[length];
         for (int i = 0; i < length; i++) {
