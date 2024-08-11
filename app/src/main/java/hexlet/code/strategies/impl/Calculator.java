@@ -10,6 +10,10 @@ public final class Calculator extends AbstractGame {
 
     private final char[] operators = {'+', '-', '*'};
 
+    public Calculator() {
+        super(3);
+    }
+
     @Override
     public String getName() {
         return "Calc";
@@ -20,16 +24,12 @@ public final class Calculator extends AbstractGame {
         return "What is the result of the expression?";
     }
 
-    @Override
-    public int getOrder() {
-        return 3;
-    }
 
     @Override
     protected Question generateQuestion() {
         Random random = getRandom();
-        int num1 = random.nextInt(numberBound);
-        int num2 = random.nextInt(numberBound);
+        int num1 = random.nextInt(getNumberBound());
+        int num2 = random.nextInt(getNumberBound());
         char operator = getRandomOperator();
         return new Question(num1 + " " + operator + " " + num2,
                 Integer.toString(calculateAnswer(num1, num2, operator)));

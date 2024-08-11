@@ -6,6 +6,11 @@ import hexlet.code.strategies.AbstractGame;
 import java.util.Random;
 
 public final class GCD extends AbstractGame {
+
+    public GCD() {
+        super(4);
+    }
+
     @Override
     public String getName() {
         return "GCD";
@@ -17,15 +22,10 @@ public final class GCD extends AbstractGame {
     }
 
     @Override
-    public int getOrder() {
-        return 4;
-    }
-
-    @Override
     protected Question generateQuestion() {
         Random random = getRandom();
-        int num1 = random.nextInt(numberBound);
-        int num2 = random.nextInt(numberBound);
+        int num1 = random.nextInt(getNumberBound());
+        int num2 = random.nextInt(getNumberBound());
         return new Question(num1 + " " + num2, Integer.toString(findGCD(num1, num2)));
     }
 

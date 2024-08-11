@@ -14,6 +14,10 @@ public final class Progression extends AbstractGame {
 
     private final int stepBound = 10;
 
+    public Progression() {
+        super(5);
+    }
+
     @Override
     public String getName() {
         return "Progression";
@@ -24,10 +28,6 @@ public final class Progression extends AbstractGame {
         return "What number is missing in the progression?";
     }
 
-    @Override
-    public int getOrder() {
-        return 5;
-    }
 
     @Override
     protected Question generateQuestion() {

@@ -5,6 +5,10 @@ import hexlet.code.strategies.AbstractGame;
 
 public final class Prime extends AbstractGame {
 
+    public Prime() {
+        super(6);
+    }
+
     @Override
     public String getName() {
         return "Prime";
@@ -15,14 +19,10 @@ public final class Prime extends AbstractGame {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    @Override
-    public int getOrder() {
-        return 6;
-    }
 
     @Override
     protected Question generateQuestion() {
-        int question = getRandom().nextInt(numberBound);
+        int question = getRandom().nextInt(getNumberBound());
         return new Question(Integer.toString(question), isPrime(question) ? "yes" : "no");
     }
 

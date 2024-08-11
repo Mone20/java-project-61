@@ -1,9 +1,14 @@
 package hexlet.code.strategies.impl;
 
 import hexlet.code.model.Question;
-import hexlet.code.strategies.Game;
+import hexlet.code.strategies.AbstractGame;
 
-public final class Exit implements Game {
+public final class Exit extends AbstractGame {
+
+    public Exit() {
+        super(0);
+    }
+
     @Override
     public boolean start() {
         System.exit(0);
@@ -26,12 +31,14 @@ public final class Exit implements Game {
     }
 
     @Override
+    protected Question generateQuestion() {
+        return null;
+    }
+
+    @Override
     public boolean isStub() {
         return true;
     }
 
-    @Override
-    public int getOrder() {
-        return 0;
-    }
+
 }

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public void run() {
+    public final void run() {
         Scanner scanner = new Scanner(System.in);
 
         GameFactory gameFactory = new GameFactory();

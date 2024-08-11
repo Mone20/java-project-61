@@ -5,6 +5,10 @@ import hexlet.code.strategies.AbstractGame;
 
 public final class Even extends AbstractGame {
 
+    public Even() {
+        super(2);
+    }
+
     @Override
     public String getName() {
         return "Even";
@@ -15,14 +19,10 @@ public final class Even extends AbstractGame {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    @Override
-    public int getOrder() {
-        return 2;
-    }
 
     @Override
     protected Question generateQuestion() {
-        int question = getRandom().nextInt(numberBound);
+        int question = getRandom().nextInt(getNumberBound());
         return new Question(Integer.toString(question), (question % 2 == 0) ? "yes" : "no");
     }
 }

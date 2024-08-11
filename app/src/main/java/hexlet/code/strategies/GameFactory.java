@@ -11,7 +11,7 @@ import hexlet.code.strategies.impl.Prime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class GameFactory {
+public final class GameFactory {
     private final Map<Integer, Game> availableGames = new LinkedHashMap<>();
 
     public GameFactory() {

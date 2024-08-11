@@ -5,13 +5,13 @@ public class Question {
     private String questionText;
     private String answer;
 
-    public Question(String questionText, String answer) {
-        this.questionText = questionText;
-        this.answer = answer;
+    public Question(String question, String actualAnswer) {
+        this.questionText = question;
+        this.answer = actualAnswer;
     }
 
     public final String getQuestionText() {
-        return questionText;
+        return this.questionText;
     }
 
     public final void setQuestionText(String questionText) {
@@ -19,7 +19,7 @@ public class Question {
     }
 
     public final String getAnswer() {
-        return answer;
+        return this.answer;
     }
 
     public final void setAnswer(String answer) {
