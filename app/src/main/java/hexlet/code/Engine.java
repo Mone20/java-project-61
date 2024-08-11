@@ -27,7 +27,7 @@ public class Engine {
         }
         boolean result = game.start();
         if (!result) {
-            System.out.printf("Let's try again, %s\n", name);
+            System.out.printf("Let's try again, %s!\n", name);
             return;
         }
         if (!game.isStub()) {
