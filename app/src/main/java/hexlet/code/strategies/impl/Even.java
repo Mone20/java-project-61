@@ -5,10 +5,6 @@ import hexlet.code.strategies.AbstractGame;
 
 public final class Even extends AbstractGame {
 
-    public Even() {
-        super(2);
-    }
-
     @Override
     public String getName() {
         return "Even";

@@ -10,10 +10,6 @@ import java.util.Scanner;
  * Implements the {@link Game} interface and includes methods for generating and validating questions.
  */
 public abstract class AbstractGame implements Game {
-    /**
-     * Game order in the start list.
-     */
-    protected final int order;
 
     /**
      * Maximum number of questions in the game.
@@ -30,9 +26,6 @@ public abstract class AbstractGame implements Game {
      */
     private final Random random = new Random();
 
-    protected AbstractGame(int order) {
-        this.order = order;
-    }
 
     /**
      * Returns the instance of the random number generator.
@@ -124,9 +117,5 @@ public abstract class AbstractGame implements Game {
         return false;
     }
 
-    @Override
-    public int getOrder() {
-        return order;
-    }
 
 }

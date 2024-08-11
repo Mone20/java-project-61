@@ -10,10 +10,6 @@ public final class Calculator extends AbstractGame {
 
     private final char[] operators = {'+', '-', '*'};
 
-    public Calculator() {
-        super(3);
-    }
-
     @Override
     public String getName() {
         return "Calc";

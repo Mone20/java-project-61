@@ -5,10 +5,6 @@ import hexlet.code.strategies.AbstractGame;
 
 public final class Prime extends AbstractGame {
 
-    public Prime() {
-        super(6);
-    }
-
     @Override
     public String getName() {
         return "Prime";

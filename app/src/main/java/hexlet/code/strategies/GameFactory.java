@@ -1,5 +1,6 @@
 package hexlet.code.strategies;
 
+import hexlet.code.Constants;
 import hexlet.code.strategies.impl.Calculator;
 import hexlet.code.strategies.impl.Even;
 import hexlet.code.strategies.impl.Exit;
@@ -15,17 +16,13 @@ public final class GameFactory {
     private final Map<Integer, Game> availableGames = new LinkedHashMap<>();
 
     public GameFactory() {
-        addGameInList(new Greet());
-        addGameInList(new Even());
-        addGameInList(new Calculator());
-        addGameInList(new GCD());
-        addGameInList(new Progression());
-        addGameInList(new Prime());
-        addGameInList(new Exit());
-    }
-
-    private void addGameInList(Game game) {
-        availableGames.put(game.getOrder(), game);
+        availableGames.put(Constants.GREET_ORDER, new Greet());
+        availableGames.put(Constants.EVEN_ORDER, new Even());
+        availableGames.put(Constants.CALC_ORDER, new Calculator());
+        availableGames.put(Constants.GCD_ORDER, new GCD());
+        availableGames.put(Constants.PROGRESSION_ORDER, new Progression());
+        availableGames.put(Constants.PRIME_ORDER, new Prime());
+        availableGames.put(Constants.EXIT_ORDER, new Exit());
     }
 
     public Game getGameByNumber(int number) {

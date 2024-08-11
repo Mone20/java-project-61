@@ -6,9 +6,6 @@ import hexlet.code.strategies.AbstractGame;
 
 
 public final class Greet extends AbstractGame {
-    public Greet() {
-        super(1);
-    }
 
     @Override
     public boolean start() {

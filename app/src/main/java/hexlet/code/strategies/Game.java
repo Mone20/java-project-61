@@ -14,7 +14,5 @@ public interface Game {
 
     boolean isStub();
 
-    int getOrder();
-
 
 }

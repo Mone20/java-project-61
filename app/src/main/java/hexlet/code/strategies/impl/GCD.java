@@ -7,10 +7,6 @@ import java.util.Random;
 
 public final class GCD extends AbstractGame {
 
-    public GCD() {
-        super(4);
-    }
-
     @Override
     public String getName() {
         return "GCD";

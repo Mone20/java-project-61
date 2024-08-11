@@ -14,9 +14,6 @@ public final class Progression extends AbstractGame {
 
     private final int stepBound = 10;
 
-    public Progression() {
-        super(5);
-    }
 
     @Override
     public String getName() {

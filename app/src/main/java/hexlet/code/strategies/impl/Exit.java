@@ -5,10 +5,6 @@ import hexlet.code.strategies.AbstractGame;
 
 public final class Exit extends AbstractGame {
 
-    public Exit() {
-        super(0);
-    }
-
     @Override
     public boolean start() {
         System.exit(0);
