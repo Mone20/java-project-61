@@ -11,7 +11,7 @@ public class Even extends AbstractGame {
 
     @Override
     public String getDescription() {
-        return "Answer 'yes' if the number is even, 'no' if the number is odd.";
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
     @Override
