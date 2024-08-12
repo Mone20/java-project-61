@@ -17,11 +17,11 @@ public final class Even {
     }
 
 
-    public static int generateQuestion() {
+    private static int generateQuestion() {
         return Constants.RANDOM.nextInt(Constants.NUMBER_BOUND);
     }
 
-    public static String generateAnswer(int question) {
+    private static String generateAnswer(int question) {
         return (question % 2 == 0) ? "yes" : "no";
     }
 

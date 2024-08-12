@@ -24,7 +24,7 @@ public final class Prime {
         return isPrime(question) ? "yes" : "no";
     }
 
-    public static boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         if (number <= 1) {
             return false;
         }

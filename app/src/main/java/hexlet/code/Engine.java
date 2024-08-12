@@ -88,32 +88,16 @@ public class Engine {
             System.out.println("Question: " + questions[i]);
             String actualAnswer = scanner.nextLine();
             String expectedAnswer = answers[i];
-            try {
-                System.out.println("Your answer: " + actualAnswer);
-                boolean isCorrectAnswer = expectedAnswer.equals(actualAnswer);
-                if (!isCorrectAnswer) {
-                    printIncorrectMessage(actualAnswer, expectedAnswer);
-                    return false;
-                }
-                System.out.println("Correct!");
-            } catch (RuntimeException e) {
-                printIncorrectMessage(actualAnswer, expectedAnswer);
+            System.out.println("Your answer: " + actualAnswer);
+            boolean isCorrectAnswer = expectedAnswer.equals(actualAnswer);
+            if (!isCorrectAnswer) {
+                System.out.printf("%s is wrong answer ;(. Correct answer was %s.\n", actualAnswer, expectedAnswer);
                 return false;
             }
+            System.out.println("Correct!");
         }
         return true;
     }
-
-    /**
-     * Prints a message indicating that the user's answer was incorrect.
-     *
-     * @param actualAnswer   the answer provided by the user.
-     * @param expectedAnswer the correct answer.
-     */
-    private static void printIncorrectMessage(String actualAnswer, String expectedAnswer) {
-        System.out.printf("%s is wrong answer ;(. Correct answer was %s.\n", actualAnswer, expectedAnswer);
-    }
-
 
     /**
      * Prints a message with the game list.
