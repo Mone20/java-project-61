@@ -119,8 +119,8 @@ public class Engine {
      * Prints a message with the game list.
      */
     private static void printGameList() {
-        for (int i = 1; i <= AVAILABLE_GAMES.length; i++) {
-            System.out.println(i + " - " + AVAILABLE_GAMES[i]);
+        for (int i = 0; i < AVAILABLE_GAMES.length; i++) {
+            System.out.println(i + 1 + " - " + AVAILABLE_GAMES[i]);
         }
         System.out.println(0 + " - " + "Exit");
     }
