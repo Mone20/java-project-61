@@ -1,19 +1,30 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
 import hexlet.code.Constants;
+import hexlet.code.Engine;
 
 public final class Prime {
 
-    public static String getDescription() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static void run() {
+        String name = Cli.greetUser();
+        String[][] gameData = generateGameData();
+        Engine.start(getDescription(), gameData, name);
     }
 
-    public static void fillQuestionsAndAnswers(String[] questions, String[] answers) {
-        for (int i = 0; i < questions.length; i++) {
+    public static String[][] generateGameData() {
+        String[][] gameData = new String[Constants.MAX_QUESTION_NUMBER][2];
+        for (int i = 0; i < Constants.MAX_QUESTION_NUMBER; i++) {
             int question = generateQuestion();
-            questions[i] = Integer.toString(question);
-            answers[i] = generateAnswer(question);
+            gameData[i][0] = Integer.toString(question);
+            gameData[i][1] = generateAnswer(question);
         }
+
+        return gameData;
+    }
+
+    public static String getDescription() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     private static int generateQuestion() {
