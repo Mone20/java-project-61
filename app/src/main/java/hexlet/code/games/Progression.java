@@ -21,11 +21,11 @@ public final class Progression {
         Engine.start(getDescription(), gameData, name);
     }
 
-    public static String getDescription() {
+    private static String getDescription() {
         return "What number is missing in the progression?";
     }
 
-    public static String[][] generateGameData() {
+    private static String[][] generateGameData() {
         Random random = Constants.RANDOM;
         String[][] gameData = new String[Constants.MAX_QUESTION_NUMBER][2];
         for (int i = 0; i < Constants.MAX_QUESTION_NUMBER; i++) {

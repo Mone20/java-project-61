@@ -12,11 +12,11 @@ public final class Even {
         Engine.start(getDescription(), gameData, name);
     }
 
-    public static String getDescription() {
+    private static String getDescription() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static String[][] generateGameData() {
+    private static String[][] generateGameData() {
         String[][] gameData = new String[Constants.MAX_QUESTION_NUMBER][2];
         for (int i = 0; i < Constants.MAX_QUESTION_NUMBER; i++) {
             int question = generateQuestion();

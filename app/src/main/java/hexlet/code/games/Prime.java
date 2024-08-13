@@ -12,7 +12,7 @@ public final class Prime {
         Engine.start(getDescription(), gameData, name);
     }
 
-    public static String[][] generateGameData() {
+    private static String[][] generateGameData() {
         String[][] gameData = new String[Constants.MAX_QUESTION_NUMBER][2];
         for (int i = 0; i < Constants.MAX_QUESTION_NUMBER; i++) {
             int question = generateQuestion();
@@ -23,7 +23,7 @@ public final class Prime {
         return gameData;
     }
 
-    public static String getDescription() {
+    private static String getDescription() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
