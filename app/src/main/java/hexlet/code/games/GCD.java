@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Constants;
 import hexlet.code.Engine;
 
@@ -8,10 +7,11 @@ import java.util.Random;
 
 public final class GCD {
 
+    public static final int NUMBER_BOUND = 100;
+
     public static void run() {
-        String name = Cli.greetUser();
         String[][] gameData = generateGameData();
-        Engine.start(getDescription(), gameData, name);
+        Engine.start(getDescription(), gameData);
     }
 
     private static String getDescription() {
@@ -22,8 +22,8 @@ public final class GCD {
         Random random = Constants.RANDOM;
         String[][] gameData = new String[Constants.MAX_QUESTION_NUMBER][2];
         for (int i = 0; i < Constants.MAX_QUESTION_NUMBER; i++) {
-            int num1 = random.nextInt(Constants.NUMBER_BOUND);
-            int num2 = random.nextInt(Constants.NUMBER_BOUND);
+            int num1 = random.nextInt(NUMBER_BOUND);
+            int num2 = random.nextInt(NUMBER_BOUND);
             gameData[i][0] = num1 + " " + num2;
             gameData[i][1] = Integer.toString(findGCD(num1, num2));
         }

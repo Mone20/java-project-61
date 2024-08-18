@@ -10,11 +10,11 @@ public class Engine {
      *
      * @param description game description.
      * @param gameData    array with question and answers.
-     * @param name        name of the player.
      */
-    public static void start(String description, String[][] gameData, String name) {
+    public static void start(String description, String[][] gameData) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(description);
+        String name = greetUser(scanner);
         for (String[] gameItem : gameData) {
             System.out.println("Question: " + gameItem[0]);
             String actualAnswer = scanner.nextLine();
@@ -24,11 +24,31 @@ public class Engine {
             if (!isCorrectAnswer) {
                 System.out.printf("%s is wrong answer ;(. Correct answer was %s.\n", actualAnswer, expectedAnswer);
                 System.out.printf("Let's try again, %s!\n", name);
+                scanner.close();
                 return;
             }
             System.out.println("Correct!");
         }
+        scanner.close();
         System.out.printf("Congratulations, %s!\n", name);
+    }
+
+
+    public static String greetUser(Scanner scanner) {
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String name = scanner.nextLine();
+
+        System.out.println("Hello, " + name + "!");
+        return name;
+    }
+
+    public static String greetUser() {
+        Scanner scanner = new Scanner(System.in);
+        String name = greetUser(scanner);
+        scanner.close();
+        return name;
     }
 
 }

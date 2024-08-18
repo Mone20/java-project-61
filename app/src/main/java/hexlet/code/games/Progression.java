@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Constants;
 import hexlet.code.Engine;
 
@@ -16,9 +15,8 @@ public final class Progression {
     private static final int STEP_BOUND = 10;
 
     public static void run() {
-        String name = Cli.greetUser();
         String[][] gameData = generateGameData();
-        Engine.start(getDescription(), gameData, name);
+        Engine.start(getDescription(), gameData);
     }
 
     private static String getDescription() {

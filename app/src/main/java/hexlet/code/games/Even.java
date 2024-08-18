@@ -1,15 +1,16 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Constants;
 import hexlet.code.Engine;
+import hexlet.code.utils.Utils;
 
 public final class Even {
 
+    public static final int NUMBER_BOUND = 100;
+
     public static void run() {
-        String name = Cli.greetUser();
         String[][] gameData = generateGameData();
-        Engine.start(getDescription(), gameData, name);
+        Engine.start(getDescription(), gameData);
     }
 
     private static String getDescription() {
@@ -29,7 +30,7 @@ public final class Even {
 
 
     private static int generateQuestion() {
-        return Constants.RANDOM.nextInt(Constants.NUMBER_BOUND);
+        return Utils.generateRandomInt(0, NUMBER_BOUND);
     }
 
     private static String generateAnswer(int question) {
