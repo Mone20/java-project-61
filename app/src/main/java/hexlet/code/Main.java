@@ -19,13 +19,12 @@ public class Main {
         printGameList();
         String gameNumber = scanner.nextLine();
         System.out.println("Your choice: " + gameNumber + "\n");
-        scanner.close();
         switch (Integer.parseInt(gameNumber)) {
             case Constants.EXIT_ORDER:
                 System.exit(0);
                 return;
             case Constants.GREET_ORDER:
-                Engine.greetUser();
+                Engine.greetUser(scanner);
                 return;
             case Constants.EVEN_ORDER:
                 Even.run();
@@ -45,7 +44,7 @@ public class Main {
             default:
                 System.out.printf("There is no game with number %s, please enter a correct number", gameNumber);
         }
-
+        scanner.close();
     }
 
     /**

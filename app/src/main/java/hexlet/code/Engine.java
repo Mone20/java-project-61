@@ -46,9 +46,8 @@ public class Engine {
 
     public static String greetUser() {
         Scanner scanner = new Scanner(System.in);
-        String name = greetUser(scanner);
-        scanner.close();
-        return name;
+
+        return greetUser(scanner);
     }
 
 }
