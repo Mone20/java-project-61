@@ -44,10 +44,4 @@ public class Engine {
         return name;
     }
 
-    public static String greetUser() {
-        Scanner scanner = new Scanner(System.in);
-
-        return greetUser(scanner);
-    }
-
 }
